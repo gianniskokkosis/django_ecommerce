@@ -1,0 +1,23 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total Cost</th>
+                <th scope="col">Checkout</th>
+            </tr>
+        </thead> 
+            <tbody>
+                {% for item in cart %}
+                        <tr>
+                            <td>{{item.product.name}}</td>
+                            <td>{{item.product.price}}</td>
+                            <td>{{total}}</td>    
+                            <td><a class="btn btn-success" href="{% url 'buycart' item.id %}">Checkout</a><td>
+                        </tr>
+                {% endfor %}
+            </tbody>      
+    </table>
+{% endblock content %}

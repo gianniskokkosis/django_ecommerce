@@ -1,0 +1,36 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-4">
+            <figure class="figure">
+                <img src="{{obj.image.url}}" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+            </figure>
+        </div>
+
+        <div class="col-sm-8">
+            <form action="" method="POST"> 
+            {% csrf_token %}
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+                </div>
+                <div class="form-group">
+                    <label>Surname</label>
+                    <input type="text" class="form-control" id="surname" placeholder="Enter surname" name="surname">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+                <div class="form-group">
+                    <label>IBAN</label>
+                    <input type="text" class="form-control" id="iban" placeholder="Enter iban" name="iban">
+                </div>
+                <div class="form-group">
+                    <label>Card Type</label>
+                    <input type="text" class="form-control" id="card_type" placeholder="e.g. Debit Card" name="card_type">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+    </div>
+{% endblock content %}
