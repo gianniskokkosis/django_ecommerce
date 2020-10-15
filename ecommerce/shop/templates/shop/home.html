@@ -6,8 +6,7 @@
                 <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.description }}</p>
-                    <p class="card-text">{{ product.price }}</p>
+                    <p class="card-text"><b>Price: </b>{{ product.price }} $</p>
                     <a href="{% url 'details' product.id %}" class="btn btn-outline-primary">Details</a>
                     <a href="{% url 'checkout' product.id %}" class="btn btn-outline-success">Buy</a>
                 </div>
