@@ -15,7 +15,7 @@
       <td>{{item.product.name}}</td>
       <td>{{item.product.price}}</td>
       <td>{{total}}</td>
-      <td><a class="btn btn-success" href="{% url 'checkout' item.product.id %}">Checkout</td>
+      <td><a class="btn btn-danger" href="{% url 'checkout' item.product.id %}">Remove</td>
     </tr>  
   {% endfor %}
 
