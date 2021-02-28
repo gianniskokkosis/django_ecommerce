@@ -5,17 +5,15 @@
     <tr>
       <th scope="col">Product Name</th>
       <th scope="col">Product Price</th>
-      <th scope="col">Total Cost</th>
-      <th scope="col">Checkout</th>
+      <th scope="col">Description</th>
     </tr>
   </thead>
   <tbody>
-  {% for item in cart %}
+  {% for item in wishlist %}
     <tr>
       <td>{{item.product.name}}</td>
       <td>{{item.product.price}}</td>
-      <td>{{total}}</td>
-      <td><a class="btn btn-danger" href="{% url 'checkout' item.product.id %}">Remove</td>
+      <td>{{item.product.description}}</td>
     </tr>  
   {% endfor %}
 

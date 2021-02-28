@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import Product, Invoice
+from .models import Product, Invoice, Wishlist
 
 def home(request):
     products = Product.objects.all()
@@ -38,4 +38,15 @@ def checkout(request, pk):
     }
     return render(request, 'shop/checkout.html', context)
 
-        
+def my_wishlist(request):
+    wishlist = Wishlist.objects.all()
+    context = {
+        "wishlist": wishlist
+    }
+    return render(request, 'shop/wishlist.html', context)  
+
+
+def add_to_wishlist(request, pk):
+    product = Product.objects.get(id=pk)
+    Wishlist.objects.create(product=product)
+    return HttpResponseRedirect('/')      

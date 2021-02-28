@@ -13,7 +13,7 @@
                     <h5 class="card-title">{{obj.name}}</h5>
                     <p class="card-text">{{obj.description}}</p>
                     <p class="card-text"><b>Price: </b>{{obj.price}}</p>
-                    <a class="btn btn-primary" href="{% url 'add_to_cart' obj.id %}">Add to cart</a>
+                    <a class="btn btn-primary" href="{% url 'add-to-whishlist' obj.id %}">Add to whishlist</a>
                     <a class="btn btn-success" href="{% url 'checkout' obj.id %}">Buy</a>
                 </div>
             </div>
