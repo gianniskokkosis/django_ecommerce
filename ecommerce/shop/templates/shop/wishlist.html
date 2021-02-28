@@ -1,20 +1,16 @@
 {% extends 'shop/base.html' %}
 {% block content %}
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Product Name</th>
-      <th scope="col">Product Price</th>
-      <th scope="col">Description</th>
-    </tr>
-  </thead>
-  <tbody>
+<h1 class="mb-3" style="text-align: center;">Here you can find all the products of your wishlist</h1>
+<p class="mb-4" style="text-align: center;">If you want to buy the product, you can click on "Buy the product" button, fill the form with your card details and complete the Purchase. Enjoy!</p>
   {% for item in wishlist %}
-    <tr>
-      <td>{{item.product.name}}</td>
-      <td>{{item.product.price}}</td>
-      <td>{{item.product.description}}</td>
-    </tr>  
+    <div class="card mb-4">
+      <h5 class="card-header">{{item.product.name}}</h5>
+      <div class="card-body">
+        <h5 class="card-title"><b>Price: </b>{{item.product.price}}</h5>
+        <p class="card-text"><b>Description: </b>{{item.product.description}}</p>
+        <a class="btn btn-success btn-lg" href="{% url 'checkout' item.product.id %}">Buy the product</a>
+      </div>
+    </div>  
   {% endfor %}
 
   </tbody>
