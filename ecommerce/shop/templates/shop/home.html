@@ -1,8 +1,9 @@
 {% extends 'shop/base.html' %}
 {% block content %}
+<!-- Home.html just takes the context data from home view in views.py, loops through the data of the context and prints that data in the HTML -->
     <div class="row">
         {% for product in products %}
-            <div class="card mr-3" style="width: 18rem;">
+            <div class="card mr-4 mb-3" style="width: 18rem;">
                 <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>

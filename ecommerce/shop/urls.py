@@ -9,7 +9,8 @@ urlpatterns = [
     path('product_details/<int:pk>/', views.product_details, name='details'),
     path('checkout/<int:pk>/', views.checkout, name='checkout'),
     path('my_wishlist', views.my_wishlist, name='whishlist'),
-    path('add_to_wishlist/<int:pk>', views.add_to_wishlist, name='add-to-whishlist')
+    path('add_to_wishlist/<int:pk>', views.add_to_wishlist, name='add-to-whishlist'),
+    path('delete_from_wishlist/<int:pk>', views.delete_from_wishlist, name='delete-from-wishlist')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

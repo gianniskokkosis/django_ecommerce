@@ -1,5 +1,6 @@
 {% extends 'shop/base.html' %}
 {% block content %}
+<!-- wishlist.html just takes the context data from wishlist view in views.py, loops through the data of the context and prints that data in the HTML -->
 <h1 class="mb-3" style="text-align: center;">Here you can find all the products of your wishlist</h1>
 <p class="mb-4" style="text-align: center;">If you want to buy the product, you can click on "Buy the product" button, fill the form with your card details and complete the Purchase. Enjoy!</p>
   {% for item in wishlist %}
@@ -9,6 +10,7 @@
         <h5 class="card-title"><b>Price: </b>{{item.product.price}}</h5>
         <p class="card-text"><b>Description: </b>{{item.product.description}}</p>
         <a class="btn btn-success btn-lg" href="{% url 'checkout' item.product.id %}">Buy the product</a>
+        <a class="btn btn-danger btn-lg" href="{% url 'delete-from-wishlist' item.product.id %}">Remove from wishlist</a>
       </div>
     </div>  
   {% endfor %}
